@@ -9,7 +9,8 @@ export class ServersComponent implements OnInit {
   allowNewServer=false;
   serverCreationStatus="no Server found";
   serverName='';
-  userName='';
+  //userName='';
+  serverCreated=false;
 
   constructor() { 
 
@@ -22,13 +23,14 @@ export class ServersComponent implements OnInit {
   }
 
   onServerCreation(){
+    this.serverCreated=true;
     this.serverCreationStatus="Server Created and name is "+ this.serverName 
   }
 
   onUpdateServerName(event: any){
     this.serverName=(<HTMLInputElement>event.target).value;
   }
-
+  /*
   isEmptyUser(){
     if(this.userName==='')
     return true;
@@ -39,4 +41,5 @@ export class ServersComponent implements OnInit {
   setUserEmpty(){
     this.userName='';
   }
+  */
 }
