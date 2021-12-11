@@ -1,9 +1,43 @@
+<!--Event Binding input and $event is used to take and use the data-->
+<label>Server Name</label>
+<!--One way binding-->
+<!--<input 
+    type="text" 
+    class="form-control"
+    (input)="onUpdateServerName($event)"
+    >
+-->
+<!--Two way binding-->
+<input 
+    type="text" 
+    class="form-control"
+    [(ngModel)]="serverName">
+<!--<p>{{serverName}}</p>-->
+
+<!--assignment 2-->
+<input 
+    type="text" 
+    class="form-control"
+    [(ngModel)]="userName">
+<p>{{userName}}</p>
+<button 
+    class="btn btn-primary"
+    [disabled]="isEmptyUser()"
+    (click)="setUserEmpty()">
+    Username
+</button>
+
+<!--assignment 2 over-->
+
+<!--Data Binding & click is event binding-->
 <button 
     class="btn btn-primary" 
     [disabled]="!allowNewServer"
     (click)="onServerCreation()">Add Servers
 </button>
 <!--<p [innerHtml]="allowNewServer"></p>-->
+
+<!--String Interpolation-->
 <p>{{serverCreationStatus}}</p>
 <app-server></app-server>
 <app-server></app-server>

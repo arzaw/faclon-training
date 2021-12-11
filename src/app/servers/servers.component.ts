@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   allowNewServer=false;
   serverCreationStatus="no Server found";
+  serverName='';
+  userName='';
 
   constructor() { 
 
@@ -20,6 +22,21 @@ export class ServersComponent implements OnInit {
   }
 
   onServerCreation(){
-    this.serverCreationStatus="Server Created"
+    this.serverCreationStatus="Server Created and name is "+ this.serverName 
+  }
+
+  onUpdateServerName(event: any){
+    this.serverName=(<HTMLInputElement>event.target).value;
+  }
+
+  isEmptyUser(){
+    if(this.userName==='')
+    return true;
+
+    return false;
+  }
+
+  setUserEmpty(){
+    this.userName='';
   }
 }
