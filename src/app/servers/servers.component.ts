@@ -11,6 +11,8 @@ export class ServersComponent implements OnInit {
   serverName='';
   //userName='';
   serverCreated=false;
+  servers=['TestServer','Testserver 2'];
+  log=[];
 
   constructor() { 
 
@@ -24,11 +26,16 @@ export class ServersComponent implements OnInit {
 
   onServerCreation(){
     this.serverCreated=true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus="Server Created and name is "+ this.serverName 
   }
 
   onUpdateServerName(event: any){
     this.serverName=(<HTMLInputElement>event.target).value;
+  }
+
+  assign(){
+    this.log.push(new Date());
   }
   /*
   isEmptyUser(){

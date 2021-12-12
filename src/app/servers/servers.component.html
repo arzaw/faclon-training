@@ -47,5 +47,20 @@
     </p>
 </ng-template>
 -->
-<app-server></app-server>
-<app-server></app-server>
+
+<!--Ng for directive-->
+<app-server *ngFor="let l of servers"></app-server>
+
+<button 
+    class="btn btn-primary"
+    (click)="assign()"
+    >
+    On click
+</button>
+
+<p 
+    *ngFor="let l of log, let i=index"
+    [ngStyle]="{backgroundColor: i>=4?'blue':'white'}"
+    [ngClass]="{whiteFont: i>=4 }">
+    {{l}}
+</p>
